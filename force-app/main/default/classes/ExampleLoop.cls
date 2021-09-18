@@ -1,0 +1,8 @@
+public with sharing class ExampleLoop {
+    public ExampleLoop() {
+        List <String> tea = new List<String>{'Black Tea', 'Green Tea', 'Chai Tea'};
+        for(String t : tea){
+            System.debug('We have ' + t);
+        }
+    }
+}
