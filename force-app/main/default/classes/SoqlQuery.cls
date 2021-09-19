@@ -58,5 +58,11 @@ public with sharing class SoqlQuery {
          * 
          *  crisis = find / change text
          */
+
+        Account[] accts = [SELECT Name,Phone FROM Account];
+        System.debug(accts);
+
+        //SoqlQuery s = new SoqlQuery();
+
     }
 }

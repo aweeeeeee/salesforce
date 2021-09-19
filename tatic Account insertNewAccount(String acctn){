@@ -1,0 +1,65 @@
+[33mcommit 576381f024f64a11154c68510ef2676f1db4b3f1[m[33m ([m[1;36mHEAD -> [m[1;32mdevelopment[m[33m, [m[1;31morigin/development[m[33m)[m
+Author: Bicomong <normanorman14@gmail.com>
+Date:   Sun Sep 19 19:57:03 2021 +0800
+
+    create dml example
+
+[33mcommit b252e4e9fb8443689894c70d38a717cfbf9e6b27[m
+Author: Bicomong <normanorman14@gmail.com>
+Date:   Sat Sep 18 20:03:06 2021 +0800
+
+    create soql query editor
+
+[33mcommit 87373553f98cd5d6948d73944540f169fdfea868[m
+Author: Bicomong <normanorman14@gmail.com>
+Date:   Sat Sep 18 17:31:19 2021 +0800
+
+    create loop exercises
+
+[33mcommit 23f710ce599dded428dfd62584611ddc506b7ed0[m
+Author: Bicomong <normanorman14@gmail.com>
+Date:   Sat Sep 18 17:27:04 2021 +0800
+
+    create example method exercises
+
+[33mcommit 6493ccc7ee4f7c871101427f8a5f38b1f2ae2b56[m
+Author: Bicomong <normanorman14@gmail.com>
+Date:   Sat Sep 18 14:39:15 2021 +0800
+
+    creat exercises one
+
+[33mcommit 6dd711d686780edc6b4942c91d366e3049499644[m
+Author: Bicomong <normanorman14@gmail.com>
+Date:   Fri Sep 17 21:19:21 2021 +0800
+
+    create For loop with conditional statement
+
+[33mcommit ec651cb72abcef382a80febfd956a74ca4140f02[m
+Author: Bicomong <normanorman14@gmail.com>
+Date:   Fri Sep 17 20:48:56 2021 +0800
+
+    Create Conditional Statement
+
+[33mcommit f9a9ed8f35f07d9c7e226006a5cc4eb8766314fa[m
+Author: Bicomong <normanorman14@gmail.com>
+Date:   Fri Sep 17 20:18:19 2021 +0800
+
+    test
+
+[33mcommit 2ce1ffcb44736ab30aa1a99e39d53c9b9e0ee661[m
+Author: Bicomong <norman.bicomong@accenture.com>
+Date:   Fri Sep 17 20:07:55 2021 +0800
+
+    Created Display Method
+
+[33mcommit f692ea61a7845e9823f8cfae53346b7a599ad447[m
+Author: Bicomong <norman.bicomong@accenture.com>
+Date:   Fri Sep 17 19:52:02 2021 +0800
+
+    Crated Display text method
+
+[33mcommit 026590bacbcda1478e187170062d4c3781fb6a0f[m[33m ([m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m
+Author: Bicomong <norman.bicomong@accenture.com>
+Date:   Fri Sep 17 19:27:02 2021 +0800
+
+    installation of salesforce
