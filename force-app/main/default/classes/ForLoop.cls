@@ -35,5 +35,25 @@ public with sharing class ForLoop {
             }
             System.debug(TotalOdd);
             System.debug(Result);
+
+            Integer TotalSum = 0;
+            List<Integer> listOfNumbers = new List<Integer>();
+                for (Integer i = 1; i <= 10; i++){
+                    listOfNumbers.add(i);
+                }
+            System.debug('total sum value' + listOfNumbers);
+
+            for (Integer i = 1; i < listOfNumbers.size(); i++){
+                if (Math.Mod(listOfNumbers[i],2) == 0) {
+                    TotalSum = TotalSum + listOfNumbers[i];
+                    System.debug('total sum' + TotalSum);
+                }
+            }
+            System.debug('final summation' + TotalSum);
+            /** display total sum value 12345678910
+             * total sum 2 6 8 12 20 30
+             * final summation 30
+             */
     }
+
 }
