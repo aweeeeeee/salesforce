@@ -1,4 +1,4 @@
-public with sharing virtual class ExtClsOne extends ExtClsTwo{
+public with sharing class ExtClsOne extends ExtClsTwo{
     public Override void printStr() {
         System.debug('this is a html string');
     }
