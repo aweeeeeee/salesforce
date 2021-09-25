@@ -10,5 +10,42 @@ public with sharing class SoqlQueryExercises {
             4.Write a query on Account object and fetch the related contacts. Use the parent to child relationship query.
          * 
          */
+        try {
+            Account acct =  new Account(
+                Name = 'awe'
+            );
+            insert acct;
+            
+            System.debug('sucess insert account');
+
+            ID acctID = acct.ID;
+            System.debug(acctID);
+            Integer Num = 1;
+
+            List<Contact> Ctn = new List<Contact>();
+                while (Num <= 5){
+                    Contact ct = new Contact();
+                    ct.FirstName = 'aweF' + Num;
+                    ct.LastName = 'aweL' + Num;
+                    ct.AccountID = acctID;
+                    Num = Num + 1;
+                    Ctn.add(ct);
+                }
+            insert ctn;
+            System.debug('succesfuly insert contact');
+
+            //List<Contact> CtnDisplay = [SELECT Id, FirstName, LastName FROM Contact WHERE AccountID = acctID ];
+            //System.debug(CtnDisplay.size());
+            Account[] accts = [SELECT Name,Phone FROM Account];
+            System.debug(accts);
+
+            Contact[] ctnDisplay = [SELECT id, FirstName, Lastname FROM Contact ];
+            System.debug(ctnDisplay);
+           
+        }
+        catch (Exception e){
+            System.debug('error');
+        }
+
     }
 }
