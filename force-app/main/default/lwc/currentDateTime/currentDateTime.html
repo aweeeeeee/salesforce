@@ -1,0 +1,15 @@
+<template>
+    awe
+    {tdate}
+    <lightning-card>
+        <lightning-record-form object-api-name={accountObject} layout-type="Full" columns="3" onsuccess={handleFormSubmitted}>
+
+        </lightning-record-form>
+    </lightning-card>
+    
+    <lightning-record-form
+            record-id={recordId}
+            object-api-name="Account"
+            layout-type="Full"
+            mode="view"></lightning-record-form>
+</template>
