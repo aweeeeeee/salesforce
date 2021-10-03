@@ -39,4 +39,48 @@ public class CityCensusTriggerHelper  {
         }
 
     }
+
+    public static void updateCensus(List<City_Census__c> censusList,List<City_Census__c> oldcensusList ) {
+
+        /**List<City_Census__c> newCensus = [SELECT Id, Auto_Approve__c FROM City_Census__c WHERe Id IN:Trigger.old]; 
+        
+        String statusVal = censusList[0].Approval_Status__c;
+
+
+        if (statusVal != 'Approved') {
+                //newCensus.Auto_Approve__c = FALSE;
+                System.debug('bb');
+                //System.debug(cc.Approval_Status__c);
+               
+        } else {
+                System.debug('aaa');
+             
+        }
+        **/
+        /**String awe;
+        for (City_Census__c ccc: oldcensusList ) {
+                awe = ccc.Approval_Status__c;
+                System.debug(awe);
+        }**/
+        
+        String statusVal = oldcensusList[0].Approval_Status__c;
+        System.debug(statusVal);
+
+        for (City_Census__c cc: censusList ) {
+            if(statusVal == 'For Approval' && cc.Auto_Approve__c == TRUE) {
+                cc.Auto_Approve__c = FALSE;
+                cc.Approval_Status__c = cc.Approval_Status__c;
+            } else if(cc.Approval_Status__c == 'For Approval' && cc.Auto_Approve__c == TRUE) {
+                cc.Auto_Approve__c = FALSE;
+                cc.Approval_Status__c = cc.Approval_Status__c;
+            } else {
+                cc.Auto_Approve__c = cc.Auto_Approve__c;
+                cc.Approval_Status__c = cc.Approval_Status__c;
+                
+            } 
+
+            
+    
+        }
+    }
 }
