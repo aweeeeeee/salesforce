@@ -8,7 +8,13 @@ public class CityCensusTriggerHelper  {
         
         //Select MasterLabel,label,DeveloperName from Approval_Mapping__mdt
         //select Id, Name, DeveloperName from Group where Type = 'Queue'
-
+        /**
+         * Map<String, Approval_Mapping__mdt> mapEd = Approval_Mapping__mdt.getAll();
+            for(String name : mapEd.keySet()){
+                System.debug(mapEd.get(name).label);
+            }
+         * 
+         */
         String City = CityVal == 'Makati' 
                             ? 'Makati City Approvers' 
                                 : CityVal == 'Las Pinas' ? 'Las Pinas City Approvers'
@@ -19,15 +25,16 @@ public class CityCensusTriggerHelper  {
         for(City_Census__c cInit : censusList){
             cInit.ownerId = assignQue.Id;
         }
+
     }
 
     public static void insertCensus(List<City_Census__c> censusList) {
         
         for(City_Census__c c : censusList){
-            if( c.Name.isNumeric() || c.Name.isAlpha() == TRUE || c.Name == null ){
-                    
+            //if( c.Name.isNumeric() || c.Name.isAlpha() == TRUE || c.Name == null ){
+            
+             if( c.Name.isNumeric() ) {
                 c.Name.addError('You can Input Letters Only');
-                
             }
 
             /**if( c.Approve_By__c.isNumeric() || c.Approve_By__c.isAlpha() == FALSE ){
@@ -46,20 +53,16 @@ public class CityCensusTriggerHelper  {
 
     public static void updateCensus(List<City_Census__c> censusList,List<City_Census__c> oldcensusList ) {
         
-        String statusVal = oldcensusList[0].Approval_Status__c;
+        //String statusVal = oldcensusList[0].Approval_Status__c;
 
         for (City_Census__c cc: censusList ) {
-            if(statusVal == 'For Approval' && cc.Auto_Approve__c == TRUE) {
-                cc.Auto_Approve__c = FALSE;
-                cc.Approval_Status__c = cc.Approval_Status__c;
-            } else if(cc.Approval_Status__c == 'For Approval' && cc.Auto_Approve__c == TRUE) {
-                cc.Auto_Approve__c = FALSE;
-                cc.Approval_Status__c = cc.Approval_Status__c;
+             if(cc.Approval_Status__c == 'For Approval' && cc.Auto_Approve__c == TRUE) {
+                cc.Auto_Approve__c = TRUE;
+                cc.Approval_Status__c = 'Approved';
             } else {
                 cc.Auto_Approve__c = cc.Auto_Approve__c;
                 cc.Approval_Status__c = cc.Approval_Status__c;
             } 
-
         }
     }
 }

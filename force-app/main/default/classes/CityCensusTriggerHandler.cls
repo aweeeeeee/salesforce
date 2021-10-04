@@ -1,12 +1,11 @@
 public class CityCensusTriggerHandler {
     public static void createHandler() {
         if(Trigger.isBefore){
-            if(Trigger.isInsert){
+            if(Trigger.isInsert || Trigger.isUpdate){
                 CityCensusTriggerHelper.insertCensus(Trigger.New);
                 CityCensusTriggerHelper.initCensus(Trigger.New);
             } 
             if(Trigger.isUpdate) {
-                CityCensusTriggerHelper.initCensus(Trigger.New);
                 CityCensusTriggerHelper.updateCensus(Trigger.New, Trigger.old);
             }
         }
