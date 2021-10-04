@@ -27,13 +27,26 @@ public class CityCensusTriggerHelper  {
         }
 
     }
+    public static void checkCensusName(List<City_Census__c> censusList) {
+
+        List<City_Census__c> checkcensusList = [SELECT Id, Name FROM City_Census__c];
+
+        for(City_Census__c c : censusList){
+           
+            for(City_Census__c cc :checkcensusList) {
+                if(c.Name == cc.Name ) {
+                    c.Name.addError('Name Already exist');
+                }
+            }
+        }
+    }
 
     public static void insertCensus(List<City_Census__c> censusList) {
-        
+
         for(City_Census__c c : censusList){
+           
             //if( c.Name.isNumeric() || c.Name.isAlpha() == TRUE || c.Name == null ){
-            
-             if( c.Name.isNumeric() ) {
+            if( c.Name.isNumeric() ) {
                 c.Name.addError('You can Input Letters Only');
             }
 
