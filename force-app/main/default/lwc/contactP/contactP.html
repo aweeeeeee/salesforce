@@ -1,0 +1,14 @@
+<template>
+    <c-contact samplevent={handlechange}></c-contact>
+
+    <table>
+        <tr>
+            <th>Lastname</th>
+        </tr>
+        <template for:each={records} for:item="con">
+            <tr key={con.Id}>
+                <td>{con.LastName}</td>
+            </tr>
+        </template>
+    </table>
+</template>
