@@ -78,4 +78,18 @@ public class CityCensusTriggerHelper  {
             } 
         }
     }
+
+    public static void retrieveRecord(List<City_Census__c> retriveRec){
+        /**List<Contact> retCon = new List<Contact>();
+
+        for(Contact c : [SELECT FirstName, 
+                                LastName,
+                                SA
+                                FROM Contact ]){
+                c.FirstName = c.FirstName;
+                c.LastName = c.LastName;
+                **/
+        }
+
+    }
 }

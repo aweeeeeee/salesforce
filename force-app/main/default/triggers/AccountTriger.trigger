@@ -1,4 +1,5 @@
 trigger AccountTriger on Account (before insert,before update) {
+    /** 
     if(Trigger.isBefore && Trigger.IsInsert){
         System.debug('before insert trigger');
     }
@@ -10,6 +11,6 @@ trigger AccountTriger on Account (before insert,before update) {
             }
         }
     }
-    
+    **/
     // created new account and view debug log. and update
 }

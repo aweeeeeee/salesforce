@@ -1,5 +1,5 @@
 trigger ChildtoParent on Contact (after update) {
-
+/**
     Map<Id,Contact> MapCo = New Map <Id, Contact>();
     Map<Id,Contact> MapCon = New Map <Id, Contact>();
 
@@ -30,5 +30,5 @@ trigger ChildtoParent on Contact (after update) {
         }
 
         update batch2;
-    }
+    }**/
 }
