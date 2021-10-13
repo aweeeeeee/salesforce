@@ -1,7 +1,7 @@
 <aura:component controller="DataAccountController" 
                 implements="force:appHostable,flexipage:availableForAllPageTypes" 
                 access="global">
-	<!-- attributes -->
+
     <aura:attribute name="allData" type="List" />
     <aura:attribute name="data" 
                     type="List"/>
@@ -27,15 +27,12 @@
                     type="List"/>
     <aura:attribute name="industryVal" 
                     type="List"/>
-    
-    <!--Use "slds-m-around_xx-large" class to add standard X-Large padding to the component--> 
-    
+
     <div class="slds-m-around_xx-large">
 
-        <!--Use aura:if tag to display Model Box, on the bese of conditions. [isOpen boolean attribute] -->   
+       
         <aura:if isTrue="{!v.isOpen}">
             
-            <!--###### MODAL BOX Start######--> 
             <section role="dialog" 
                      tabindex="-1" 
                      aria-labelledby="modal-heading-01" 
@@ -43,9 +40,7 @@
                      aria-describedby="modal-content-id-1" 
                      class="slds-modal slds-fade-in-open">
                 <div class="slds-modal__container">
-                    <!-- ###### MODAL BOX HEADER Start ######-->
-                    
-                    <!--###### MODAL BOX BODY Part Start######-->
+                   
                     <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
                         
                          <lightning:input value="{!v.accountObj.Name}" 
@@ -88,7 +83,7 @@
                         </lightning:select> 
                         
                     </div>
-                    <!--###### MODAL BOX FOOTER Part Start ######-->
+                  
                     <footer class="slds-modal__footer">
                         <lightning:button variant="neutral" 
                                           label="Cancel"
@@ -102,7 +97,7 @@
                 </div>
             </section>
             <div class="slds-backdrop slds-backdrop_open"></div>
-            <!--###### MODAL BOX Part END Here ######-->
+           
             
         </aura:if>
     </div>
@@ -143,7 +138,6 @@
         </lightning:layout>
     </div>
     
-     <!-- the container element determine the height of the datatable -->
     <div style="height: 350px; width: 100%;">
         <lightning:datatable
                 keyField="id"
@@ -164,6 +158,12 @@
                       label="Save All" 
                       disabled="false"
                       onclick="{!c.changeAccStatus}"/>
+
+   
+    <lightning:button variant="neutral" 
+                      label="sample"
+                      title="sample"
+                      onclick="{!c.myAction }"/>
     </div>
 	
 </aura:component>

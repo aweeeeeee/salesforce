@@ -55,14 +55,15 @@
             let state = response.getState();
             if(state === "SUCCESS"){
                 component.set('v.accountId',data.getReturnValue());
+                console.log('sucess insert');
             }
         });
         $A.enqueueAction(action);
         
 		component.set("v.isOpen", false);
-        this.showToast("Success!","success","You Have added on Account record in draft");
         this.reloadDataTable();
-         
+        this.showToast("Success!","success","You Have added on Account record in draft");
+
     },
     
     reloadDataTable : function(){
@@ -73,16 +74,19 @@
     },
     
     deleteRecord : function(component, event) {
-        var accountRec = event.getParam('row');        
+        var accountRec = event.getParam('row');     
+
         var action = component.get("c.delAccount");
         var rows = component.get('v.data');
         action.setParams({
             "accountRec": accountRec
         });
+
         action.setCallback(this, function(response) {
-            	component.set('v.data', rows);
+                    component.set('v.data', rows);
         });
         $A.enqueueAction(action);
+
         this.showToast("Success!","success","You have successfuly remove '" + accountRec.Name + "' in Account Record Draft");
         this.reloadDataTable();
     },

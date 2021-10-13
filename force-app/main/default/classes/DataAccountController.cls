@@ -31,6 +31,12 @@ public class DataAccountController {
         return [SELECT Id, Name, Phone, Industry, Type FROM Account ORDER BY Name ASC];
     }
     
+    
+    @AuraEnabled
+    public static void delAccount(Account accountRec){
+        delete accountRec;
+    } 
+    
     @AuraEnabled        
     public static List<String> getPickListType(){
         List<String> pickListValuesList = new List<String>();
@@ -53,12 +59,13 @@ public class DataAccountController {
         }     
         return pickListValuesList; 
     }
-    
+
     @AuraEnabled
-    public static void delAccount(Account accountRec){
-        delete accountRec;
-    } 
+    public static list<Contact> getRelatedList(Id recordId)
+    {
+        List<Contact> Conlist = [Select id, name,firstname,lastname from Contact where AccountId=: recordId ];
+        return Conlist;
+    }
     
-    
-    
+
 }

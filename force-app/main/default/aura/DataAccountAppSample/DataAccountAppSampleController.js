@@ -1,7 +1,6 @@
 ({
 	onInit : function(component, event, helper) {
 		helper.getAccounts(component);
-        
         helper.checkActive(component);
         
         component.set("v.columns",  [
@@ -47,18 +46,7 @@
     
     handleRowAction : function(component, event, helper) {
         var action = event.getParam('action');
-        switch (action.name) {
-            case 'view':
-                helper.viewRecord(component, event);
-                break;
-            case 'edit':
-                helper.editRecord(component, event);
-                break;
-            case 'delete':
-                helper.deleteRecord(component, event);
-                break;
-        }
-
+        helper.deleteRecord(component, event);
     },
     
     changeAccStatus: function(component, event, helper){
@@ -77,6 +65,29 @@
             }
         }
         cmp.set("v.data",tempArray);
-    }
+    },
+
+    myAction : function(component, event, helper) 
+    {
+        var ConList = component.get("c.getRelatedList");
+        ConList.setParams
+        ({
+            recordId: "0015g00000SY2QaAAL"
+        });
+        
+        ConList.setCallback(this, function(data) {
+                var  result = data.getReturnValue();
+
+                if(result.length > 0){
+                    console.log(result.length);
+                } else {
+                    console.log('none');
+                }
+                
+                
+                //component.set("v.ContactList", data.getReturnValue());
+        });
+        $A.enqueueAction(ConList);
+ }
      
 })
