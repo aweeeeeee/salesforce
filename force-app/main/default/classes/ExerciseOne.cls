@@ -1,7 +1,7 @@
 public with sharing class ExerciseOne {
     public ExerciseOne() {
-            Integer Math = 80;
-            Integer Science = 80;
+            Integer Math = 98;
+            Integer Science = 90;
             Integer Average = 0;
 
             Average = (Math + Science) / 2;

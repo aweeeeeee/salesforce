@@ -10,29 +10,22 @@ public with sharing class ArithmeticExercises {
             (Hint: Implement add(), multiply() and printOutput() as private static methods invoked by a public instance doMath() method. The doMath() method will be invoked from the Execute Anonymous window)
          */
 
-        public Integer TotalSum;
-        public Integer TotalMulti;
-    
-        public void add(Integer NumOne,Integer Numtwo){
-            this.TotalSum = NumOne + Numtwo;
-            System.debug(this.TotalSum);
-        }
-    
-        public void multiply(Integer NumOnee,Integer NumTwoo){
-            this.TotalMulti = NumOnee * Numtwoo;
-            System.debug(this.TotalMulti);
-        }
-    
-        private void PrintOutPut(){
-           
-            System.debug('total sum' + TotalSum);
-            System.debug('total multiplication' + TotalMulti);
-        }
-        /**
-         * ArithmeticExercises d = new ArithmeticExercises();
-            d.add(2,1);
-            d.multiply(2,2);
-            d.PrintOutput();
-         * 
-         */
+    public Integer TotalSum;
+    public Integer TotalMulti;
+
+    public void add(Integer NumOne,Integer Numtwo){
+        this.TotalSum = NumOne + Numtwo;
+        System.debug(this.TotalSum);
+    }
+
+    public void multiply(Integer NumOnee,Integer NumTwoo){
+        this.TotalMulti = NumOnee * Numtwoo;
+        System.debug(this.TotalMulti);
+    }
+
+    public void PrintOutPut(){
+       
+        System.debug('total sum' + TotalSum);
+        System.debug('total multiplication' + TotalMulti);
+    }
 }

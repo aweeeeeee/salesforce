@@ -1,0 +1,20 @@
+<template>
+    <table>
+        <tr>
+            <th></th>
+            <th></th>
+        </tr>
+        
+        <template for:each={accounts.data} for:item="acc">
+            <tr key={acc.Id} >
+                <td>
+                    <lightning-input type="radio" name="radioButton" value={acc.Id} onchange={handleClick}></lightning-input>
+                </td>
+                <td>
+                    {acc.Name}
+                </td>
+
+            </tr>
+        </template>
+    </table>
+</template>

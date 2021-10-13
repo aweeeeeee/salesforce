@@ -7,4 +7,12 @@ public class AccountTriggerHandler {
         }
         
     }
+    
+    public static void appendContact(){
+        if(Trigger.isAfter){
+            if(Trigger.isInsert){
+                AccountTriggerHelper.appendContact(Trigger.New);
+            } 
+        }
+    }
 }

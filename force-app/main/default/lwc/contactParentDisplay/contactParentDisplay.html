@@ -1,0 +1,14 @@
+<template>
+    <c-contact onsamplevent={handlechange}></c-contact>
+
+    <table>
+        <tr>
+            <th>Lastname</th>
+        </tr>
+        <template for:each={records} for:item="con">
+            <tr key={con.Id}>
+                <td>{com.LastName}</td>
+            </tr>
+        </template>
+    </table>
+</template>
