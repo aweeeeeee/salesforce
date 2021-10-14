@@ -1,5 +1,4 @@
 <template>
-    awe
         <lightning-card>
             <ui>
                 <template for:each={opportunities.data} for:item="opportunity">
@@ -8,4 +7,9 @@
                 </template>
             </ui>
         </lightning-card>
+
+        <lightning-datatable
+        key-field="Id"
+        data={contacts.data}
+        columns={columns}></lightning-datatable>
 </template>
