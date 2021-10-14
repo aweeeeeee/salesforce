@@ -15,7 +15,7 @@
                 disabled: false,
                 iconName: 'utility:delete',
                 iconPosition: 'left',
-                variant: 'border-filled'
+                variant: 'destructive'
             }}
             ]);
         
@@ -58,6 +58,7 @@
         var searchFilter = event.getSource().get("v.value").toUpperCase();
         var tempArray =[];
         var i;
+        
         for(i=0; i<allRecords.length; i++){
             if((allRecords[i].Name && allRecords[i].Name.toUpperCase().indexOf(searchFilter) != -1) || 
                (allRecords[i].Phone && allRecords[i].Phone.toUpperCase().indexOf(searchFilter) != -1)){
