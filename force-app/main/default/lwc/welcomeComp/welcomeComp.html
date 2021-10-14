@@ -1,0 +1,36 @@
+<template>
+    <lightning-card  title="Hellow">
+        <lightning-button label="New" slot="actions"></lightning-button>
+        <p class="slds-p-horizontal_small">{welcomeMsg}</p>
+        <p slot="footer">Card Footer</p>
+    </lightning-card>
+
+    //decorator
+    hi {greetings}
+
+    <lightning-input value={greetings}
+                     name="greetings"
+                     label="enter greetings"
+                     onchange={handleGreetingsChanges}></lightning-input>
+
+
+    <lightning-card>
+            <h3 slot="title">
+                <lightning-icon icon-name="utility:connected_apps" size="small"></lightning-icon>
+                  calculator example
+            </h3>
+            <div slot="footer">
+                    <lightning-badge label={result}></lightning-badge>
+            </div>
+            <p class="slds-p-horizontal_small">
+                <lightning-input value={firstNumber} 
+                                 name="fnumber" 
+                                 label="first number"
+                                 onchange={handleChanges}></lightning-input>
+                <lightning-input value={secondNumber} 
+                                 name="snumber"
+                                 label="second number"
+                                 onchange={handleChanges}></lightning-input>
+            </p>
+    </lightning-card>
+</template>

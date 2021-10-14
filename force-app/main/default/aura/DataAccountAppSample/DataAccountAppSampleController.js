@@ -2,7 +2,8 @@
 	onInit : function(component, event, helper) {
 		helper.getAccounts(component);
         helper.checkActive(component);
-        
+        helper.getTypePicklist(component, event);
+        helper.getIndustryPicklist(component, event);      
         component.set("v.columns",  [
             {label: 'Account Name', fieldName: 'Name', type: 'text'},
             {label: 'Phone', fieldName: 'Phone', type: 'text'},
@@ -34,11 +35,6 @@
       component.set("v.isOpen", false);
    },
     
-   doInit : function(component, event, helper) {    
-      helper.getTypePicklist(component, event);
-      helper.getIndustryPicklist(component, event);      
-    },
-    
     doSave : function(component, event, helper) {
       helper.saveItms(component);
       helper.checkActive(component);
@@ -66,29 +62,8 @@
             }
         }
         cmp.set("v.data",tempArray);
-    },
+    }
 
-    myAction : function(component, event, helper) 
-    {
-        var ConList = component.get("c.getRelatedList");
-        ConList.setParams
-        ({
-            recordId: "0015g00000SY2QaAAL"
-        });
-        
-        ConList.setCallback(this, function(data) {
-                var  result = data.getReturnValue();
-
-                if(result.length > 0){
-                    console.log(result.length);
-                } else {
-                    console.log('none');
-                }
-                
-                
-                //component.set("v.ContactList", data.getReturnValue());
-        });
-        $A.enqueueAction(ConList);
- }
+    
      
 })
