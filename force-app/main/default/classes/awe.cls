@@ -8,4 +8,10 @@ public with sharing class awe {
     public static List<Account> getAccountRecordList(){
         return [SELECT Id, Name, type, Industry FROM Account limit 10];
     }
+
+    @AuraEnabled
+    public static integer getSumResult(Integer firstNumber, Integer secondNumber){
+        return(firstNumber+secondNumber);
+    }
+    
 }
