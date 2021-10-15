@@ -1,5 +1,5 @@
-import { LightningElement, track } from 'lwc';
-
+import { LightningElement, track, wire } from 'lwc';
+import getAccounts from '@salesforce/apex/awe.getAccounts';
 export default class WelcomeComp extends LightningElement {
     welcomeMsg = 'welcome';
     @track greetings;
@@ -22,5 +22,14 @@ export default class WelcomeComp extends LightningElement {
         }
 
         this.result = parseInt(this.firstNumber) + parseInt(this.secondNumber);
+    }
+
+    @track data;
+    @wire(getAccounts) accountRecords({error,data}){
+        if(data){
+            this.data = data;
+        }else {
+            this.data = undefined;
+        }
     }
 }
