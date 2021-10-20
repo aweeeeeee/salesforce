@@ -4,21 +4,14 @@ public class CityCensusTriggerHelper  {
 
         String Que = 'Queue';
         String CityVal = censusList[0].City__c;
-        String CityName = censusList[0].Name;
+        String City;
         
-        //Select MasterLabel,label,DeveloperName from Approval_Mapping__mdt
-        //select Id, Name, DeveloperName from Group where Type = 'Queue'
-        /**
-         * Map<String, Approval_Mapping__mdt> mapEd = Approval_Mapping__mdt.getAll();
-            for(String name : mapEd.keySet()){
-                System.debug(mapEd.get(name).label);
-            }
-         * 
-         */
-        String City = CityVal == 'Makati' 
-                            ? 'Makati City Approvers' 
-                                : CityVal == 'Las Pinas' ? 'Las Pinas City Approvers'
-                                    : 'Taguig City Approvers';
+        List<Approval_Mapping__mdt> apprvMap = new List<Approval_Mapping__mdt>([Select MasterLabel,label,DeveloperName,City__c from Approval_Mapping__mdt]);
+        for(Approval_Mapping__mdt d: apprvMap){
+                    if(CityVal == d.City__c){
+                            City = d.label;
+                    }
+        }
 
         Group assignQue = Database.query(' SELECT Id, Name FROM Group WHERE Type= :Que AND Name = :City ');
 

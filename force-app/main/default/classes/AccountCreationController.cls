@@ -10,4 +10,10 @@ public with sharing class AccountCreationController {
            throw new AuraHandledException(ex.getMessage());
        }
     }
+
+    @AuraEnabled
+    public static List<Account> createAccounts(List<Account> accountList){
+        insert accountList;
+        return accountList;
+    }
 }
