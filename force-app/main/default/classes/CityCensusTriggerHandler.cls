@@ -14,7 +14,7 @@ public class CityCensusTriggerHandler {
         }
         if(Trigger.isAfter){
             if(Trigger.isInsert){
-                //CityCensusTriggerHandler.retrieveRecord(Trigger.New);
+                CityCensusTriggerHelper.retrieveRecord(Trigger.New);
             }
                
         }

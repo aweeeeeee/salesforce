@@ -38,16 +38,9 @@ public class CityCensusTriggerHelper  {
 
         for(City_Census__c c : censusList){
            
-            //if( c.Name.isNumeric() || c.Name.isAlpha() == TRUE || c.Name == null ){
             if( c.Name.isNumeric() ) {
                 c.Name.addError('You can Input Letters Only');
             }
-
-            /**if( c.Approve_By__c.isNumeric() || c.Approve_By__c.isAlpha() == FALSE ){
-                    
-                    c.Approve_By__c.addError('You can Input Letters Only');
-                    
-            } **/
 
             c.Approval_Status__c = c.Auto_Approve__c == TRUE 
                                         ? 'Approved' : 'For Approval';
@@ -58,8 +51,6 @@ public class CityCensusTriggerHelper  {
     }
 
     public static void updateCensus(List<City_Census__c> censusList,List<City_Census__c> oldcensusList ) {
-        
-        //String statusVal = oldcensusList[0].Approval_Status__c;
 
         for (City_Census__c cc: censusList ) {
              if(cc.Approval_Status__c == 'For Approval' && cc.Auto_Approve__c == TRUE) {
@@ -70,5 +61,41 @@ public class CityCensusTriggerHelper  {
                 cc.Approval_Status__c = cc.Approval_Status__c;
             } 
         }
+    }
+
+    public static void retrieveRecord(List<City_Census__c> retrieveCensus){
+
+        List<Contact> checkCity = [SELECT FirstName, LastName, City__c 
+                                            FROM Contact];
+
+        List<Resident__c> residentRec = new List<Resident__c>();
+
+        String retrieveCity = retrieveCensus[0].City__c;
+        String CityCensusId = retrieveCensus[0].Id;
+
+        for(Contact b : checkCity){
+            if(retrieveCity == b.City__c){
+
+                Resident__c r = new Resident__c();
+                r.First_Name__c = b.FirstName;
+                r.Last_Name__c = b.LastName;
+                r.City__c = b.City__c;
+                r.City_Census__c = CityCensusId;
+                residentRec.add(r);
+                System.debug('sucess');
+    
+            }
+            
+        }
+        insert residentRec;
+        /**
+         * Resident__c[] doomedAccts = [SELECT Id, Name FROM Resident__c 
+                         WHERE City__c = 'Las Pinas']; 
+            try {
+                delete doomedAccts;
+            } catch (DmlException e) {
+                // Process exception here
+            }
+         */
     }
 }
