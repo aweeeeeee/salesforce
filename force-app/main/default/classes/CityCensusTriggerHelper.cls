@@ -24,14 +24,9 @@ public class CityCensusTriggerHelper  {
 
     public static void insertCensus(List<City_Census__c> censusList) {
 
-        for(City_Census__c c : censusList){
-            c.Approval_Status__c = c.Approval_Status__c;
-
-            if( c.Auto_Approve__c == TRUE ){
-                c.Approval_Status__c = 'Approved';
-            }
+            censusList[0].Approval_Status__c = censusList[0].Auto_Approve__c == TRUE 
+                                    ? 'Approved' : 'For Approval';
                                     
-        }
 
     }
 
