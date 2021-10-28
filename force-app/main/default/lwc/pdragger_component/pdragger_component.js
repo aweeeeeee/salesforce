@@ -6,4 +6,5 @@ export default class Pdragger_component extends LightningElement {
     handleDragStart(event){
         event.dataTransfer.setData("account_id", event.target.dataset.item);
     }
+    
 }

@@ -7,7 +7,7 @@ export default class Pdrop_Component extends LightningElement {
     fields = [NAME_FIELD, INDUSTRY, PHONE];
     @track accountId;
     @track message='Drop an Account here';
-    dropElelment(event){
+    dropElement(event){
         this.accountId = event.dataTransfer.getData("account_id");
         this.message='';
     }
