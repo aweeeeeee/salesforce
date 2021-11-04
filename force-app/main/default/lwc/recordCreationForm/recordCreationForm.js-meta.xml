@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Record Creation</masterLabel>
+    <description>this is a simple component</description>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="objectApiName" 
+                      type="String" 
+                      label="Object Api Name" 
+                      role="inputOnly"/>
+            <property name="fields"
+                      type="String"
+                      label="Fields list"
+                      description="to hold field list"
+                      default="FirstName,LastName"
+                      role="inputOnly"/>
+            <property name="title"
+                      type="String"
+                      label="title"
+                      description="to hold title"
+                      role="inputOnly" />
+            <property name="message"
+                      type="String"
+                      label="Message"
+                      description="to hold message"
+                      role="inputOnly" />
+            <property name="parentRecordId"
+                      type="String"
+                      label="Parent rec id"
+                      description="to hold parent record id"
+                      role="inputOnly" />
+            <property name="parentFieldAPIName"
+                      type="String"
+                      label="parent field name"
+                      description="to hold parent record id"
+                      role="inputOnly"/>
+            <property name="recordIdAfterSave"
+                      type="String"
+                      label="Record id after save"
+                      description="to hold parent record id"
+                      role="outputOnly" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>
