@@ -3,18 +3,18 @@ public class CityCensusTriggerHelper  {
     public static void initCensus(List<City_Census__c> censusList) {
 
         String Que = 'Queue';
-        String CityVal = censusList[0].City__c;
         String City;
         
         List<Approval_Mapping__mdt> apprvMap = new List<Approval_Mapping__mdt>([Select MasterLabel,label,DeveloperName,City__c 
                                                                                   from Approval_Mapping__mdt]);
-        /**for(City_Census__c cc : censusList){
-
-        }     **/                                                                 
+                                                              
         for(Approval_Mapping__mdt d : apprvMap){
-                    if(CityVal == d.City__c){
-                            City = d.label;
+                for(City_Census__c cns : censusList){
+                    if(cns.City__c == d.City__c){
+                        City = d.label;
                     }
+                }
+                    
         }
 
         Group assignQue = Database.query(' SELECT Id, Name FROM Group WHERE Type= :Que AND Name = :City ');
@@ -37,7 +37,7 @@ public class CityCensusTriggerHelper  {
 
         List<Contact> checkCity = [SELECT FirstName, LastName, City__c,Salutation
                                             FROM Contact];
-
+        //select Id,City__c,(select First_Name__c from Resident__r) from City_census__c
         List<Resident__c> residentRec = new List<Resident__c>();
         for(City_Census__c cc: retrieveCensus){
             if(cc.Approval_Status__c == 'Approved') {
