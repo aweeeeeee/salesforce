@@ -1,46 +1,50 @@
 <template>
-    <lightning-card  title="Hellow">
-        <lightning-button label="New" slot="actions"></lightning-button>
-        <p class="slds-p-horizontal_small">{welcomeMsg}</p>
-        <p slot="footer">Card Footer</p>
-    </lightning-card>
+  <lightning-card title="Hellow">
+    <lightning-button label="New" slot="actions"></lightning-button>
+    <p class="slds-p-horizontal_small">{welcomeMsg}</p>
+    <p slot="footer">Card Footer</p>
+  </lightning-card>
 
-    //decorator
-    <div class="slds-m-around_medium">
-        hi {greetings}
+  //decorator
+  <div class="slds-m-around_medium">test hi {greetings}</div>
+
+  <lightning-input
+    value={greetings}
+    name="greetings"
+    label="enter greetings"
+    onchange={handleGreetingsChanges}
+  ></lightning-input>
+
+  <lightning-card>
+    <h3 slot="title">
+      <lightning-icon
+        icon-name="utility:connected_apps"
+        size="small"
+      ></lightning-icon>
+      calculator example
+    </h3>
+    <div slot="footer">
+      <c-result-component result={result}></c-result-component>
     </div>
-    
+    <p class="slds-p-horizontal_small">
+      <lightning-input
+        value={firstNumber}
+        name="fnumber"
+        label="first number"
+        onchange={handleChanges}
+      ></lightning-input>
+      <lightning-input
+        value={secondNumber}
+        name="snumber"
+        label="second number"
+        onchange={handleChanges}
+      ></lightning-input>
+    </p>
+  </lightning-card>
 
-    <lightning-input value={greetings}
-                     name="greetings"
-                     label="enter greetings"
-                     onchange={handleGreetingsChanges}></lightning-input>
-
-
-    <lightning-card>
-            <h3 slot="title">
-                <lightning-icon icon-name="utility:connected_apps" size="small"></lightning-icon>
-                  calculator example
-            </h3>
-            <div slot="footer">
-                    <c-result-component result={result}></c-result-component>
-            </div>
-            <p class="slds-p-horizontal_small">
-                <lightning-input value={firstNumber} 
-                                 name="fnumber" 
-                                 label="first number"
-                                 onchange={handleChanges}></lightning-input>
-                <lightning-input value={secondNumber} 
-                                 name="snumber"
-                                 label="second number"
-                                 onchange={handleChanges}></lightning-input>
-            </p>
-    </lightning-card>
-
-    <lightning-card title="data display using wire">
-        <template for:each={data} for:item="account">
-            <p key={account.Id}>{account.Name}</p>
-        </template>
-    </lightning-card>
-    
+  <lightning-card title="data display using wire">
+    <template for:each={data} for:item="account">
+      <p key={account.Id}>{account.Name}</p>
+    </template>
+  </lightning-card>
 </template>
