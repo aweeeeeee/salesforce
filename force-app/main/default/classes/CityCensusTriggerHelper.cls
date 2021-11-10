@@ -38,7 +38,6 @@ public class CityCensusTriggerHelper  {
         List<Contact> checkCity = [SELECT FirstName, LastName, City__c,Salutation
                                             FROM Contact];
         //select Id,City__c,(select First_Name__c from Resident__r) from City_census__c
-        
         List<Resident__c> residentRec = new List<Resident__c>();
         for(City_Census__c cc: retrieveCensus){
             if(cc.Approval_Status__c == 'Approved') {

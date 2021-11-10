@@ -1,0 +1,95 @@
+[33mcommit 0b080eb1f369724eab5c88b7cdc298c67832c125[m[33m ([m[1;36mHEAD -> [m[1;32mdevelopment[m[33m, [m[1;31morigin/development[m[33m)[m
+Author: Bicomong <normanorman14@gmail.com>
+Date:   Wed Nov 10 09:04:54 2021 +0800
+
+    update welcome lwc
+
+[33mcommit 7d29274e0a61b83f47d240bda627db5610c5b747[m
+Author: Bicomong <normanorman14@gmail.com>
+Date:   Mon Nov 8 12:48:38 2021 +0800
+
+    create test jest
+
+[33mcommit 7d9c649149da3bc70641a978a39023f0418ee959[m
+Author: Bicomong <normanorman14@gmail.com>
+Date:   Fri Nov 5 09:38:01 2021 +0800
+
+    update city census city
+
+[33mcommit e4e7d55bea50925f920c07cf9675a3775f417a39[m
+Author: Bicomong <normanorman14@gmail.com>
+Date:   Thu Nov 4 14:01:31 2021 +0800
+
+    create lwc with flow for account,contact and opportunity
+
+[33mcommit d1f2643789b2accab4d2a62e93c457cd37fb0758[m
+Author: Bicomong <normanorman14@gmail.com>
+Date:   Tue Nov 2 09:33:41 2021 +0800
+
+    create parent to child relationship query
+
+[33mcommit 0f43316f120c9cec6a53e9eb743651640de4f5fd[m
+Author: Bicomong <normanorman14@gmail.com>
+Date:   Fri Oct 29 15:43:03 2021 +0800
+
+    create post retriever with wrapper class
+
+[33mcommit 7cf549961315c096d22656825ad78bc82dade717[m
+Author: Bicomong <normanorman14@gmail.com>
+Date:   Fri Oct 29 11:04:32 2021 +0800
+
+    create wrapper class and youtube api
+
+[33mcommit e1ad2fff5686f5e62a5e116e44357b1cf3219a9c[m
+Author: Bicomong <normanorman14@gmail.com>
+Date:   Thu Oct 28 14:37:55 2021 +0800
+
+    create contact account lookup lwc
+
+[33mcommit 305c53df8883056729eb8ef3c1bceb318da8e03a[m
+Author: Bicomong <normanorman14@gmail.com>
+Date:   Thu Oct 28 09:23:51 2021 +0800
+
+    create parent to child lwc
+
+[33mcommit 36617fac98b7c98b406a5abead2e53f3e088bb3c[m
+Author: Bicomong <normanorman14@gmail.com>
+Date:   Wed Oct 27 14:29:02 2021 +0800
+
+    create drag and drop in lwc
+
+[33mcommit cc532a6d3f09c148cee2c14715aa78bd202ae8dc[m
+Author: Bicomong <normanorman14@gmail.com>
+Date:   Tue Oct 26 17:16:03 2021 +0800
+
+    create search account in lwc
+
+[33mcommit 85017e38dc9dcb3bfcc59e98140a63e43647e454[m
+Author: Bicomong <normanorman14@gmail.com>
+Date:   Tue Oct 26 16:20:25 2021 +0800
+
+    create mass delete account in lwc
+
+[33mcommit 1c9fa05a566632fd4e2a56ae584aeff48415f754[m
+Author: Bicomong <normanorman14@gmail.com>
+Date:   Tue Oct 26 14:49:50 2021 +0800
+
+    fix multipla account create on lwc
+
+[33mcommit 3a2db98e9b6fe1d12e189248079f7d2829492f33[m
+Author: Bicomong <normanorman14@gmail.com>
+Date:   Mon Oct 25 21:39:21 2021 +0800
+
+    update code for offset array to for loop
+
+[33mcommit 953124027d40ed7025dadf9863d607b48af71d24[m
+Author: Bicomong <normanorman14@gmail.com>
+Date:   Mon Oct 25 15:32:41 2021 +0800
+
+    fix approval status in insert census
+
+[33mcommit 31859178c6fcc3d0be2b164774e8cb64e8bde9cd[m
+Author: Bicomong <normanorman14@gmail.com>
+Date:   Mon Oct 25 09:09:29 2021 +0800
+
+    fix gender in retrieve city census
