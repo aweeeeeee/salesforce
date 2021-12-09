@@ -1,0 +1,16 @@
+<template>
+    <lightning-card variant="" title="Upcoming events" icon-name="standard:event">
+        <div class="slds-m-around_small">
+            <template if:true={error}>
+                {error}
+            </template>
+        </div>
+        <div class="slds-m-around_small">
+                <lightning-datatable key-field="id"
+                        data={result}
+                        show-row-number-column
+                        hide-checkbox-column
+                        columns={columnsList}></lightning-datatable>
+        </div>
+    </lightning-card>
+</template>
